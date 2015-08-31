@@ -9,7 +9,7 @@ More info:
 
 ## Usage
 ```
-  ropinjector \<file-to-infect\> \<shellcode-file\> \<output-file\>* [options]*
+  ropinjector <file-to-infect> <shellcode-file> <output-file>* [options]*
 ```
 
 (\* denotes optional arguments)
