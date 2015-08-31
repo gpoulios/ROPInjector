@@ -14,11 +14,16 @@ More info:
 
 (\* denotes optional arguments)
 
+e.g. 
+```
+ropinjector.exe firefox.exe revshell.txt
+```
+
 * file-to-infect	: any 32-bit, non-packed PE
 
 * shellcode-file	: the shellcode to patch in the PE file
 
-* output-file		(optional) : The name of the output file. If not specified, 
+* output-file (optional) : The name of the output file. If not specified, 
 				ROPInjector will choose a suitable filename indicating the 
 				type of injection performed.
 
