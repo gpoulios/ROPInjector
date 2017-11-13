@@ -17,11 +17,11 @@ double currentTimeSecs()
 {
 	FILETIME tm;
 	ULONGLONG t;
-#if defined(NTDDI_WIN8) && NTDDI_VERSION >= NTDDI_WIN8
-	GetSystemTimePreciseAsFileTime(&tm);
-#else
+//#if defined(NTDDI_WIN8) && NTDDI_VERSION >= NTDDI_WIN8
+//	GetSystemTimePreciseAsFileTime(&tm);
+//#else
 	GetSystemTimeAsFileTime(&tm);
-#endif
+//#endif
 	t = ((ULONGLONG)tm.dwHighDateTime << 32) | (ULONGLONG)tm.dwLowDateTime;
 	return (double)t / 10000000.0;
 }
