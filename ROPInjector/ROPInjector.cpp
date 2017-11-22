@@ -247,6 +247,7 @@ int main(int argc, char **argv)
 	patch.execPt = execPt;
 	printf("[.] Input file is %s\n", filename);
 
+	printf("[.] Loading shellcode from %s\n", shFilename);
 	shCode = (BYTE *)loadFile(shFilename, &shCodeSize);
 	if (shCode && shCodeSize && !shText)
 	{
@@ -284,6 +285,8 @@ int main(int argc, char **argv)
 
 
 	iHead = analyze(shCode, shCodeSize, &numInstr, 0);
+	if (iHead == NULL)
+		goto exit_failure;
 
 	printf("[.] Disassembly of %s\n", shFilename);
 	printIDisassembly(iHead);

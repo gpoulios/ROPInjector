@@ -1105,6 +1105,10 @@ bool setIntBranchTarget(const INSTRUCTION *iHead, INSTRUCTION *i)
 	switch (targetIdx) 
 	{
 		case -2: // refers to instruction inside but in its middle 
+			printf("The following instruction refers to middle of "
+				"instruction using relative offset %+d:\n", relOff);
+			printInstruction(i);
+			puts("Cannot handle code ambiguity. Aborting...");
 			return FALSE;
 		case -1: // refers to instruction outside
 			return TRUE;
